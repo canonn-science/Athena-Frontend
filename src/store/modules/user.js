@@ -26,7 +26,6 @@ const actions = {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
       login({ identifier: username.trim(), password: password }).then(response => {
-        //const { data } = response
         const data = response
         commit('SET_TOKEN', data.jwt)
         setToken(data.jwt)

@@ -37,7 +37,6 @@ module.exports = {
       errors: true
     },
     proxy: {
-      // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
         target: `https://api.canonn.tech:2083`,
