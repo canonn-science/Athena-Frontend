@@ -56,105 +56,193 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/reports',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/reports/create',
+    name: 'Reports',
+    meta: { title: 'Reports', icon: 'form' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'create',
+        component: () => import('@/views/reports/create'),
+        name: 'Create Report',
+        meta: { title: 'New Report' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
+        path: 'biology',
+        component: () => import('@/views/reports/biology'), // Parent router-view
+        name: 'Biology',
+        meta: { title: 'Biology' },
         children: [
           {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
+            path: 'apreports',
+            component: () => import('@/views/reports/biology/apreports'),
+            name: 'Amphora Plants',
+            meta: { title: 'Amphora Plants' }
           },
           {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
+            path: 'bmreports',
+            component: () => import('@/views/reports/biology/bmreports'),
+            name: 'Bark Mounds',
+            meta: { title: 'Bark Mounds' }
           },
           {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
+            path: 'btreports',
+            component: () => import('@/views/reports/guardian/btreports'),
+            name: 'Brain Trees',
+            meta: { title: 'Brain Trees' }
+          },
+          {
+            path: 'fgreports',
+            component: () => import('@/views/reports/biology/fgreports'),
+            name: 'Fungal Gourds',
+            meta: { title: 'Fungal Gourds' }
+          },
+          {
+            path: 'tbreports',
+            component: () => import('@/views/reports/thargoid/tbreports'),
+            name: 'Thargoid Barnacles',
+            meta: { title: 'Thargoid Barnacles' }
+          },
+          {
+            path: 'twreports',
+            component: () => import('@/views/reports/biology/twreports'),
+            name: 'Tube Worms',
+            meta: { title: 'Tube Worms' }
           }
         ]
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        meta: { title: 'menu2' }
+        path: 'cartographics',
+        component: () => import('@/views/reports/cartographics'), // Parent router-view
+        name: 'Cartographics',
+        meta: { title: 'Cartographics' },
+        children: [
+          {
+            path: 'genreports',
+            component: () => import('@/views/reports/cartographics/genreports'),
+            name: 'Generation Ships',
+            meta: { title: 'Generation Ships' }
+          },
+          {
+            path: 'lcreports',
+            component: () => import('@/views/reports/cartographics/lcreports'),
+            name: 'Lagrange Clouds',
+            meta: { title: 'Lagrange Clouds' }
+          }
+        ]
+      },
+      {
+        path: 'geology',
+        component: () => import('@/views/reports/geology'), // Parent router-view
+        name: 'Geology',
+        meta: { title: 'Geology' },
+        children: [
+          {
+            path: 'csreports',
+            component: () => import('@/views/reports/geology/csreports'),
+            name: 'Crystalline Shards',
+            meta: { title: 'Crystalline Shards' }
+          },
+          {
+            path: 'fmreports',
+            component: () => import('@/views/reports/geology/fmreports'),
+            name: 'Fumaroles',
+            meta: { title: 'Fumaroles' }
+          },
+          {
+            path: 'gvreports',
+            component: () => import('@/views/reports/geology/gvreports'),
+            name: 'Gas Vents',
+            meta: { title: 'Gas Vents' }
+          },
+          {
+            path: 'gyreports',
+            component: () => import('@/views/reports/geology/gyreports'),
+            name: 'Geysers',
+            meta: { title: 'Geysers' }
+          },
+          {
+            path: 'lsreports',
+            component: () => import('@/views/reports/geology/lsreports'),
+            name: 'Lava Spouts',
+            meta: { title: 'Lava Spouts' }
+          }
+        ]
+      },
+      {
+        path: 'guardian',
+        component: () => import('@/views/reports/guardian'), // Parent router-view
+        name: 'Guardian',
+        meta: { title: 'Guardian' },
+        children: [
+          {
+            path: 'btreports',
+            component: () => import('@/views/reports/guardian/btreports'),
+            name: 'Brain Trees',
+            meta: { title: 'Brain Trees' }
+          },
+          {
+            path: 'gbreports',
+            component: () => import('@/views/reports/guardian/gbreports'),
+            name: 'Guardian Beacons',
+            meta: { title: 'Guardian Beacons' }
+          },
+          {
+            path: 'grreports',
+            component: () => import('@/views/reports/guardian/grreports'),
+            name: 'Guardian Ruins',
+            meta: { title: 'Guardian Ruins' }
+          },
+          {
+            path: 'gsreports',
+            component: () => import('@/views/reports/guardian/gsreports'),
+            name: 'Guardian Structures',
+            meta: { title: 'Guardian Structures' }
+          }
+        ]
+      },
+      {
+        path: 'thargoid',
+        component: () => import('@/views/reports/thargoid'), // Parent router-view
+        name: 'Thargoid',
+        meta: { title: 'Thargoid' },
+        children: [
+          {
+            path: 'tbreports',
+            component: () => import('@/views/reports/thargoid/tbreports'),
+            name: 'Thargoid Barnacles',
+            meta: { title: 'Thargoid Barnacles' }
+          },
+          {
+            path: 'tsreports',
+            component: () => import('@/views/reports/thargoid/tsreports'),
+            name: 'Thargoid Structures',
+            meta: { title: 'Thargoid Structures' }
+          }
+        ]
       }
     ]
   },
 
   {
-    path: 'external-link',
+    path: 'canonn-science',
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'https://canonn.science',
+        meta: { title: 'Canonn Science', icon: 'link' }
+      }
+    ]
+  },
+
+  {
+    path: 'canonn-github',
+    component: Layout,
+    children: [
+      {
+        path: 'https://github.com/canonn-science',
+        meta: { title: 'Canonn Github', icon: 'link' }
       }
     ]
   },
