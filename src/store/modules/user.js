@@ -25,10 +25,11 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
-        const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
+      login({ identifier: username.trim(), password: password }).then(response => {
+        //const { data } = response
+        const data = response
+        commit('SET_TOKEN', data.jwt)
+        setToken(data.jwt)
         resolve()
       }).catch(error => {
         reject(error)
@@ -40,13 +41,14 @@ const actions = {
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
-        const { data } = response
+        const data = response
 
         if (!data) {
           reject('Verification failed, please Login again.')
         }
 
-        const { name, avatar } = data
+        const name = data.username
+        const avatar = 'https://api.canonn.tech/uploads/47a52dade2cf4e8bada56cce16c93765.gif'
 
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
