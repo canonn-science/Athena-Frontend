@@ -71,32 +71,32 @@ export const constantRoutes = [
       {
         path: 'biology',
         component: () => import('@/views/reports/biology'), // Parent router-view
-        name: 'Biology Reports',
-        meta: { title: 'Biology Reports' }
+        name: 'Biology',
+        meta: { title: 'Biology', icon: 'organic-structure' }
       },
       {
         path: 'cartographics',
         component: () => import('@/views/reports/cartographics'), // Parent router-view
-        name: 'Cartographics Reports',
-        meta: { title: 'Cartographics Reports' }
+        name: 'Cartographics',
+        meta: { title: 'Cartographics', icon: 'vacuum' }
       },
       {
         path: 'geology',
         component: () => import('@/views/reports/geology'), // Parent router-view
-        name: 'Geology Reports',
-        meta: { title: 'Geology Reports' }
+        name: 'Geology',
+        meta: { title: 'Geology', icon: 'geology-site' }
       },
       {
         path: 'guardian',
         component: () => import('@/views/reports/guardian'), // Parent router-view
-        name: 'Guardian Reports',
-        meta: { title: 'Guardian Reports' }
+        name: 'Guardian',
+        meta: { title: 'Guardian', icon: 'planetary-object' }
       },
       {
         path: 'thargoid',
         component: () => import('@/views/reports/thargoid'), // Parent router-view
-        name: 'Thargoid Reports',
-        meta: { title: 'Thargoid Reports' }
+        name: 'Thargoid',
+        meta: { title: 'Thargoid', icon: 'thargoid-codex' }
       }
     ]
   },
