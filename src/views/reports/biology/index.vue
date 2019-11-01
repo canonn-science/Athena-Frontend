@@ -2,7 +2,7 @@
   <div class="tab-container">
     <el-tabs v-model="activeName" style="margin-top:15px;" type="border-card">
       <el-tab-pane v-for="item in tabMapOptions" :key="item.key" :label="item.label" :name="item.key">
-        <component v-bind:is="item.table" v-if="activeName==item.key" :type="item.key" />
+        <component :is="item.table" v-if="activeName==item.key" :type="item.key" />
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -19,10 +19,10 @@ export default {
   data() {
     return {
       tabMapOptions: [
-        { label: 'Amphora Plants', key: 'ap', table: apTable},
-        { label: 'Bark Mounds', key: 'bm', table: bmTable},
-        { label: 'Fungal Gourds', key: 'fg', table: fgTable},
-        { label: 'Tube Worms', key: 'tw', table: twTable}
+        { label: 'Amphora Plants', key: 'ap', table: apTable },
+        { label: 'Bark Mounds', key: 'bm', table: bmTable },
+        { label: 'Fungal Gourds', key: 'fg', table: fgTable },
+        { label: 'Tube Worms', key: 'tw', table: twTable }
       ],
       activeName: 'ap'
     }
