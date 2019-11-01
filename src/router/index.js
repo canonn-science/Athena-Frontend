@@ -65,162 +65,38 @@ export const constantRoutes = [
       {
         path: 'create',
         component: () => import('@/views/reports/create'),
-        name: 'Create Report',
-        meta: { title: 'New Report' }
+        name: 'Create a Report',
+        meta: { title: 'Create a Report', icon: 'form' }
       },
       {
         path: 'biology',
         component: () => import('@/views/reports/biology'), // Parent router-view
-        name: 'Biology',
-        meta: { title: 'Biology' },
-        children: [
-          {
-            path: 'apreports',
-            component: () => import('@/views/reports/biology/apreports'),
-            name: 'Amphora Plants',
-            meta: { title: 'Amphora Plants' }
-          },
-          {
-            path: 'bmreports',
-            component: () => import('@/views/reports/biology/bmreports'),
-            name: 'Bark Mounds',
-            meta: { title: 'Bark Mounds' }
-          },
-          {
-            path: 'btreports',
-            component: () => import('@/views/reports/guardian/btreports'),
-            name: 'Brain Trees',
-            meta: { title: 'Brain Trees' }
-          },
-          {
-            path: 'fgreports',
-            component: () => import('@/views/reports/biology/fgreports'),
-            name: 'Fungal Gourds',
-            meta: { title: 'Fungal Gourds' }
-          },
-          {
-            path: 'tbreports',
-            component: () => import('@/views/reports/thargoid/tbreports'),
-            name: 'Thargoid Barnacles',
-            meta: { title: 'Thargoid Barnacles' }
-          },
-          {
-            path: 'twreports',
-            component: () => import('@/views/reports/biology/twreports'),
-            name: 'Tube Worms',
-            meta: { title: 'Tube Worms' }
-          }
-        ]
+        name: 'Biology Reports',
+        meta: { title: 'Biology Reports' }
       },
       {
         path: 'cartographics',
         component: () => import('@/views/reports/cartographics'), // Parent router-view
-        name: 'Cartographics',
-        meta: { title: 'Cartographics' },
-        children: [
-          {
-            path: 'genreports',
-            component: () => import('@/views/reports/cartographics/genreports'),
-            name: 'Generation Ships',
-            meta: { title: 'Generation Ships' }
-          },
-          {
-            path: 'lcreports',
-            component: () => import('@/views/reports/cartographics/lcreports'),
-            name: 'Lagrange Clouds',
-            meta: { title: 'Lagrange Clouds' }
-          }
-        ]
+        name: 'Cartographics Reports',
+        meta: { title: 'Cartographics Reports' }
       },
       {
         path: 'geology',
         component: () => import('@/views/reports/geology'), // Parent router-view
-        name: 'Geology',
-        meta: { title: 'Geology' },
-        children: [
-          {
-            path: 'csreports',
-            component: () => import('@/views/reports/geology/csreports'),
-            name: 'Crystalline Shards',
-            meta: { title: 'Crystalline Shards' }
-          },
-          {
-            path: 'fmreports',
-            component: () => import('@/views/reports/geology/fmreports'),
-            name: 'Fumaroles',
-            meta: { title: 'Fumaroles' }
-          },
-          {
-            path: 'gvreports',
-            component: () => import('@/views/reports/geology/gvreports'),
-            name: 'Gas Vents',
-            meta: { title: 'Gas Vents' }
-          },
-          {
-            path: 'gyreports',
-            component: () => import('@/views/reports/geology/gyreports'),
-            name: 'Geysers',
-            meta: { title: 'Geysers' }
-          },
-          {
-            path: 'lsreports',
-            component: () => import('@/views/reports/geology/lsreports'),
-            name: 'Lava Spouts',
-            meta: { title: 'Lava Spouts' }
-          }
-        ]
+        name: 'Geology Reports',
+        meta: { title: 'Geology Reports' }
       },
       {
         path: 'guardian',
         component: () => import('@/views/reports/guardian'), // Parent router-view
-        name: 'Guardian',
-        meta: { title: 'Guardian' },
-        children: [
-          {
-            path: 'btreports',
-            component: () => import('@/views/reports/guardian/btreports'),
-            name: 'Brain Trees',
-            meta: { title: 'Brain Trees' }
-          },
-          {
-            path: 'gbreports',
-            component: () => import('@/views/reports/guardian/gbreports'),
-            name: 'Guardian Beacons',
-            meta: { title: 'Guardian Beacons' }
-          },
-          {
-            path: 'grreports',
-            component: () => import('@/views/reports/guardian/grreports'),
-            name: 'Guardian Ruins',
-            meta: { title: 'Guardian Ruins' }
-          },
-          {
-            path: 'gsreports',
-            component: () => import('@/views/reports/guardian/gsreports'),
-            name: 'Guardian Structures',
-            meta: { title: 'Guardian Structures' }
-          }
-        ]
+        name: 'Guardian Reports',
+        meta: { title: 'Guardian Reports' }
       },
       {
         path: 'thargoid',
         component: () => import('@/views/reports/thargoid'), // Parent router-view
-        name: 'Thargoid',
-        meta: { title: 'Thargoid' },
-        children: [
-          {
-            path: 'tbreports',
-            component: () => import('@/views/reports/thargoid/tbreports'),
-            name: 'Thargoid Barnacles',
-            meta: { title: 'Thargoid Barnacles' }
-          },
-          {
-            path: 'tsreports',
-            component: () => import('@/views/reports/thargoid/tsreports'),
-            name: 'Thargoid Structures',
-            meta: { title: 'Thargoid Structures' }
-          }
-        ]
+        name: 'Thargoid Reports',
+        meta: { title: 'Thargoid Reports' }
       }
     ]
   },
