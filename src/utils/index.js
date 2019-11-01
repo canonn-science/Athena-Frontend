@@ -1,8 +1,4 @@
 /**
- * Created by PanJiaChen on 16/11/18.
- */
-
-/**
  * Parse the time to string
  * @param {(Object|string|number)} time
  * @param {string} cFormat
@@ -36,8 +32,6 @@ export function parseTime(time, cFormat) {
   }
   const time_str = format.replace(/{([ymdhisa])+}/g, (result, key) => {
     const value = formatObj[key]
-    // Note: getDay() returns 0 on Sunday
-    if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value ] }
     return value.toString().padStart(2, '0')
   })
   return time_str
@@ -60,14 +54,14 @@ export function formatTime(time, option) {
   const diff = (now - d) / 1000
 
   if (diff < 30) {
-    return '刚刚'
+    return 'just now'
   } else if (diff < 3600) {
     // less 1 hour
-    return Math.ceil(diff / 60) + '分钟前'
+    return Math.ceil(diff / 60) + 'minutes ago'
   } else if (diff < 3600 * 24) {
-    return Math.ceil(diff / 3600) + '小时前'
+    return Math.ceil(diff / 3600) + 'an hour ago'
   } else if (diff < 3600 * 24 * 2) {
-    return '1天前'
+    return '1 day ago'
   }
   if (option) {
     return parseTime(time, option)
@@ -75,13 +69,13 @@ export function formatTime(time, option) {
     return (
       d.getMonth() +
       1 +
-      '月' +
+      'month' +
       d.getDate() +
-      '日' +
+      'day' +
       d.getHours() +
-      '时' +
+      'hour' +
       d.getMinutes() +
-      '分'
+      'minute'
     )
   }
 }

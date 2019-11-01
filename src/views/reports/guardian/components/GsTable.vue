@@ -86,7 +86,7 @@ export default {
       this.listLoading = true
       fetchGSReports().then(response => {
         this.list = response
-        console.log(response)
+
         this.listLoading = false
       })
     }

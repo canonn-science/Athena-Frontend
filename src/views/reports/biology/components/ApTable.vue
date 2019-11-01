@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <div class="filter-container">Test</div>
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -9,20 +10,14 @@
       highlight-current-row
       style="width: 100%;"
     >
-      <el-table-column align="center" prop="id" label="Report ID" width="95">
-        <template slot-scope="scope">
-          {{ scope.row.id }}
-        </template>
+      <el-table-column prop="id" label="ID" align="center" width="80">
+        <template slot-scope="scope">{{ scope.row.id }}</template>
       </el-table-column>
       <el-table-column label="System">
-        <template slot-scope="scope">
-          {{ scope.row.systemName }}
-        </template>
+        <template slot-scope="scope">{{ scope.row.systemName }}</template>
       </el-table-column>
       <el-table-column label="Body">
-        <template slot-scope="scope">
-          {{ scope.row.bodyName }}
-        </template>
+        <template slot-scope="scope">{{ scope.row.bodyName }}</template>
       </el-table-column>
       <el-table-column label="CMDR" width="200" align="center">
         <template slot-scope="scope">
@@ -30,24 +25,16 @@
         </template>
       </el-table-column>
       <el-table-column label="Latitude" width="110" align="center">
-        <template slot-scope="scope">
-          {{ scope.row.latitude }}
-        </template>
+        <template slot-scope="scope">{{ scope.row.latitude }}</template>
       </el-table-column>
       <el-table-column label="Longitude" width="110" align="center">
-        <template slot-scope="scope">
-          {{ scope.row.longitude }}
-        </template>
+        <template slot-scope="scope">{{ scope.row.longitude }}</template>
       </el-table-column>
       <el-table-column label="Type" width="200" align="center">
-        <template slot-scope="scope">
-          {{ scope.row.type }}
-        </template>
+        <template slot-scope="scope">{{ scope.row.type }}</template>
       </el-table-column>
       <el-table-column label="Client Version" width="200" align="center">
-        <template slot-scope="scope">
-          {{ scope.row.clientVersion }}
-        </template>
+        <template slot-scope="scope">{{ scope.row.clientVersion }}</template>
       </el-table-column>
       <el-table-column class-name="status-col" label="Status" width="110" align="center">
         <template slot-scope="scope">
@@ -55,13 +42,19 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="fetchData" />
+
   </div>
 </template>
 
 <script>
-import { fetchAPReports } from '@/api/reports/apreports' // secondary package based on el-pagination
+import Pagination from '@/components/Pagination'
+import { fetchAPReports } from '@/api/reports/apreports'
 
 export default {
+  name: 'APReports',
+  components: { Pagination },
   filters: {
     statusFilter(status) {
       const statusMap = {
@@ -74,8 +67,15 @@ export default {
   },
   data() {
     return {
+      tablekey: 0,
       list: null,
-      listLoading: true
+      total: 0,
+      listLoading: true,
+      listQuery: {
+        page: 1,
+        limit: 20,
+        sort: '+id'
+      }
     }
   },
   created() {
@@ -85,8 +85,8 @@ export default {
     fetchData() {
       this.listLoading = true
       fetchAPReports().then(response => {
-        this.list = response
         console.log(response)
+        this.list = response
         this.listLoading = false
       })
     }
